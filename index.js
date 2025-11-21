@@ -1,11 +1,13 @@
 import makeWASocket, { useMultiFileAuthState } from "@whiskeysockets/baileys";
 import axios from "axios";
 import qrcode from "qrcode-terminal";
+import dotenv from "dotenv";
 
-const N8N_WEBHOOK = "https://n8n-n8n.e4wfok.easypanel.host/webhook-test/whatsapp";
+dotenv.config();
 
-const GROUP_ID = "120363044133406507@g.us";  // ID do grupo 
-const TARGET_NUMBER = "551151976586@s.whatsapp.net"; // número do usuário
+const N8N_WEBHOOK = process.env.N8N_WEBHOOK; // URL do webhook do n8n
+const GROUP_ID = process.env.GROUP_ID;  // ID do grupo 
+const TARGET_NUMBER = process.env.TARGET_NUMBER; // número do usuário
 
 async function start() {
     const { state, saveCreds } = await useMultiFileAuthState("./auth");
