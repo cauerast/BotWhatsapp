@@ -20,15 +20,15 @@ FEATURES
 FILE STRUCTURE
 ------------------------------------------------------------
 
-.
-├── .env
-├── .gitignore
-├── index.js
-├── index-geral.js
-├── list-groups.js
-├── package.json
-├── package-lock.json
-└── requirements.txt
+.<br>
+├── .env<br>
+├── .gitignore<br>
+├── index.js<br>
+├── index-geral.js<br>
+├── list-groups.js<br>
+├── package.json<br>
+├── package-lock.json<br>
+└── requirements.txt<br>
 
 ------------------------------------------------------------
 PREREQUISITES
@@ -45,44 +45,45 @@ INSTALLATION
 ------------------------------------------------------------
 
 1. Clone the repository:
-   git clone https://github.com/YOUR_USERNAME/whatsapp-n8n-bot.git
-   cd whatsapp-n8n-bot
+   git clone https://github.com/YOUR_USERNAME/whatsapp-n8n-bot.git<br><br>
+   - on terminal: <br>
+   cd whatsapp-n8n-bot<br>
 
-2. Install dependencies:
+2. Install dependencies:<br>
    npm install
 
 3. Create a .env file:
 
-   N8N_WEBHOOK=https://your-n8n-instance/webhook/whatsapp
-   GROUP_ID=120363000000000000@g.us
-   TARGET_NUMBER=5511999999999@s.whatsapp.net
+   N8N_WEBHOOK=https://github.com/cauerast/BotWhatsapp<br><br>
+   GROUP_ID=120363000000000000@g.us<br><br>
+   TARGET_NUMBER=5511999999999@s.whatsapp.net<br>
 
 ------------------------------------------------------------
 USAGE
 ------------------------------------------------------------
 
-1. Run the main bot:
+1. Run the main bot:<br>
    node index.js
 
    - Generates QR Code
    - Connects to WhatsApp
    - Monitors group and forwards messages to n8n
 
-2. List all WhatsApp groups:
+2. List all WhatsApp groups:<br>
    node list-groups.js
 
    Use this to find your GROUP_ID.
 
-3. General workflow route:
+3. General workflow route:<br>
    node index-geral.js
 
 ------------------------------------------------------------
 ENVIRONMENT VARIABLES
 ------------------------------------------------------------
 
-N8N_WEBHOOK     → Your n8n webhook URL
-GROUP_ID        → WhatsApp group ID to monitor
-TARGET_NUMBER   → Specific WhatsApp number to filter messages
+N8N_WEBHOOK     → Your n8n webhook URL<br>
+GROUP_ID        → WhatsApp group ID to monitor<br>
+TARGET_NUMBER   → Specific WhatsApp number to filter messages<br>
 
 ------------------------------------------------------------
 EXAMPLE OUTPUT
@@ -93,8 +94,8 @@ EXAMPLE OUTPUT
 
 ----------Connected to WhatsApp!----------
 
-Message filtered: Hello World!
-Sent to n8n successfully!
+Message filtered: Hello World!<br>
+Sent to n8n successfully!<br>
 
 ------------------------------------------------------------
 LICENSE
@@ -106,6 +107,6 @@ MIT License
 AUTHOR
 ------------------------------------------------------------
 
-Cauê Silva Rasteiro
-GitHub: https://github.com/cauerast
-LinkedIn: https://www.linkedin.com/in/cauê-rast-26bba22a6/
+Cauê Silva Rasteiro<br>
+GitHub: https://github.com/cauerast<br>
+LinkedIn: https://www.linkedin.com/in/cauê-rast-26bba22a6/<br>
