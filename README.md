@@ -2,7 +2,7 @@
 
 A Node.js project that connects to WhatsApp Web via **Baileys**, monitors messages from a specific user in a specific group, and forwards them to an **n8n webhook**. The project also includes routes for listing all groups and running the bot in different modes.
 
----
+
 
 ## Features
 
@@ -16,7 +16,7 @@ A Node.js project that connects to WhatsApp Web via **Baileys**, monitors messag
   - `index.js` → Main entry point to run the bot fully.
 - Fully configurable via `.env`.
 
----
+
 
 ## File Structure
 
@@ -33,7 +33,7 @@ A Node.js project that connects to WhatsApp Web via **Baileys**, monitors messag
 yaml
 Copiar código
 
----
+
 
 ## Prerequisites
 
@@ -43,31 +43,27 @@ Copiar código
 - n8n workflow endpoint (webhook URL)
 - Internet connection
 
----
+
 
 ## Installation
 
 1. Clone this repository:
 
-```bash
 git clone https://github.com/YOUR_USERNAME/whatsapp-n8n-bot.git
 cd whatsapp-n8n-bot
 Install dependencies:
 
-bash
-Copiar código
+
 npm install
 Create a .env file at the root:
 
-env
-Copiar código
+
 N8N_WEBHOOK=https://your-n8n-instance/webhook/whatsapp
 GROUP_ID=123456789-123456@g.us
 TARGET_NUMBER=551199999999@s.whatsapp.net
 Usage
 1. Run Main Bot
-bash
-Copiar código
+
 node index.js
 Generates a QR code in the terminal if first-time login.
 
@@ -76,16 +72,14 @@ Listens for messages from the target number in the target group.
 Sends messages to the configured n8n webhook.
 
 2. List Groups
-bash
-Copiar código
+
 node list-groups.js
 Outputs all WhatsApp groups the account participates in.
 
 Useful for obtaining GROUP_ID automatically.
 
 3. General Workflow Route
-bash
-Copiar código
+
 node index-geral.js
 Custom entry point for general workflows or testing automation.
 
@@ -99,8 +93,7 @@ Message Filtering: Only forwards messages from TARGET_NUMBER in GROUP_ID.
 QR Code Authentication: First-time login generates a terminal QR code for scanning.
 
 Example Output
-css
-Copiar código
+
 ----------SCAN THE QR CODE BELOW----------
 [QR Code in terminal]
 
@@ -122,16 +115,3 @@ Feel free to use, modify, and distribute.
 Author
 Cauê Silva Rasteiro
 GitHub | LinkedIn
-
-yaml
-Copiar código
-
----
-
-This README:  
-- Explains the **project purpose and workflow**.  
-- Includes **setup and running instructions**.  
-- Documents **file structure and environment variables**.  
-- Uses a **professional, GitHub-ready style**.  
-
----
