@@ -36,7 +36,6 @@ async function start() {
         const chatId = msg.key.remoteJid; 
         const text = msg.message.conversation || msg.message.extendedTextMessage?.text || "";
 
-        // Filtra apenas mensagens do TARGET_NUMBER no grupo específicado
         if (chatId === GROUP_ID && sender === TARGET_NUMBER) {
             console.log("\n\n----------Message filtered:", text,"\n\n");
 
