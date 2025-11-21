@@ -1,0 +1,5 @@
+run w/ node js
+    npm install
+    npm init -y
+    node index.js
+    
