@@ -1,117 +1,111 @@
 # WhatsApp Group Monitor & n8n Integration Bot
 
-A Node.js project that connects to WhatsApp Web via **Baileys**, monitors messages from a specific user in a specific group, and forwards them to an **n8n webhook**. The project also includes routes for listing all groups and running the bot in different modes.
+A Node.js project that connects to WhatsApp Web via Baileys, monitors messages from a specific user in a specific group, and forwards them to an n8n webhook. The project also includes routes for listing all groups and running the bot in different modes.
 
-
-
-## Features
+------------------------------------------------------------
+FEATURES
+------------------------------------------------------------
 
 - Connects to WhatsApp Web using Baileys with multi-file authentication.
-- Generates a **QR Code** in the terminal for first-time authentication.
-- Monitors messages from a **specific user** in a **specific group**.
-- Sends messages to an **n8n webhook** for automation workflows.
+- Generates a QR Code in the terminal for first-time authentication.
+- Monitors messages from a specific user in a specific group.
+- Sends messages to an n8n webhook for automation workflows.
 - Includes routes:
-  - `list-groups.js` → Lists all WhatsApp groups the account participates in.
-  - `index-geral.js` → General entry point for custom workflows.
-  - `index.js` → Main entry point to run the bot fully.
-- Fully configurable via `.env`.
+  - list-groups.js → Lists all WhatsApp groups the account participates in.
+  - index-geral.js → General entry point for custom workflows.
+  - index.js → Main entry point to run the bot fully.
+- Fully configurable via .env.
 
-
-
-## File Structure
+------------------------------------------------------------
+FILE STRUCTURE
+------------------------------------------------------------
 
 .
-├── .env # Environment variables
+├── .env
 ├── .gitignore
-├── index.js # Main bot execution file
-├── index-geral.js # General route for workflows
-├── list-groups.js # Route to list all WhatsApp groups
+├── index.js
+├── index-geral.js
+├── list-groups.js
 ├── package.json
 ├── package-lock.json
 └── requirements.txt
 
-yaml
-Copiar código
-
-
-
-## Prerequisites
+------------------------------------------------------------
+PREREQUISITES
+------------------------------------------------------------
 
 - Node.js >= 18
 - npm
 - WhatsApp account
-- n8n workflow endpoint (webhook URL)
+- n8n webhook URL
 - Internet connection
 
+------------------------------------------------------------
+INSTALLATION
+------------------------------------------------------------
 
+1. Clone the repository:
+   git clone https://github.com/YOUR_USERNAME/whatsapp-n8n-bot.git
+   cd whatsapp-n8n-bot
 
-## Installation
+2. Install dependencies:
+   npm install
 
-1. Clone this repository:
+3. Create a .env file:
 
-git clone https://github.com/YOUR_USERNAME/whatsapp-n8n-bot.git
-cd whatsapp-n8n-bot
-Install dependencies:
+   N8N_WEBHOOK=https://your-n8n-instance/webhook/whatsapp
+   GROUP_ID=120363000000000000@g.us
+   TARGET_NUMBER=5511999999999@s.whatsapp.net
 
+------------------------------------------------------------
+USAGE
+------------------------------------------------------------
 
-npm install
-Create a .env file at the root:
+1. Run the main bot:
+   node index.js
 
+   - Generates QR Code
+   - Connects to WhatsApp
+   - Monitors group and forwards messages to n8n
 
-N8N_WEBHOOK=https://your-n8n-instance/webhook/whatsapp
-GROUP_ID=123456789-123456@g.us
-TARGET_NUMBER=551199999999@s.whatsapp.net
-Usage
-1. Run Main Bot
+2. List all WhatsApp groups:
+   node list-groups.js
 
-node index.js
-Generates a QR code in the terminal if first-time login.
+   Use this to find your GROUP_ID.
 
-Listens for messages from the target number in the target group.
+3. General workflow route:
+   node index-geral.js
 
-Sends messages to the configured n8n webhook.
+------------------------------------------------------------
+ENVIRONMENT VARIABLES
+------------------------------------------------------------
 
-2. List Groups
+N8N_WEBHOOK     → Your n8n webhook URL
+GROUP_ID        → WhatsApp group ID to monitor
+TARGET_NUMBER   → Specific WhatsApp number to filter messages
 
-node list-groups.js
-Outputs all WhatsApp groups the account participates in.
-
-Useful for obtaining GROUP_ID automatically.
-
-3. General Workflow Route
-
-node index-geral.js
-Custom entry point for general workflows or testing automation.
-
-Code Overview
-Baileys Integration: Handles WhatsApp Web connection, authentication, and message listening.
-
-n8n Integration: Sends JSON payloads with message content to a specified webhook.
-
-Message Filtering: Only forwards messages from TARGET_NUMBER in GROUP_ID.
-
-QR Code Authentication: First-time login generates a terminal QR code for scanning.
-
-Example Output
+------------------------------------------------------------
+EXAMPLE OUTPUT
+------------------------------------------------------------
 
 ----------SCAN THE QR CODE BELOW----------
-[QR Code in terminal]
+<QR CODE>
 
 ----------Connected to WhatsApp!----------
 
-----------Message filtered: Hello World!----------
+Message filtered: Hello World!
+Sent to n8n successfully!
 
-----------Sent to n8n----------
-Environment Variables
-Variable	Description
-N8N_WEBHOOK	URL of your n8n webhook to send messages
-GROUP_ID	WhatsApp group ID to monitor
-TARGET_NUMBER	Phone number of the user to track (E.164)
+------------------------------------------------------------
+LICENSE
+------------------------------------------------------------
 
-License
-This project is licensed under the MIT License.
-Feel free to use, modify, and distribute.
+MIT License
 
-Author
+------------------------------------------------------------
+AUTHOR
+------------------------------------------------------------
+
 Cauê Silva Rasteiro
-GitHub | LinkedIn
+GitHub: https://github.com/cauerast
+LinkedIn: https://www.linkedin.com/in/cauê-rast-26bba22a6/
