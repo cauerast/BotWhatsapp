@@ -55,8 +55,8 @@ INSTALLATION
 3. Create a .env file:
 
    N8N_WEBHOOK=https://github.com/cauerast/BotWhatsapp<br><br>
-   GROUP_ID=120363000000000000@g.us<br><br>
-   TARGET_NUMBER=5511999999999@s.whatsapp.net<br>
+   GROUP_ID=123456789101112131415161718@g.us<br><br>
+   TARGET_NUMBER=5599999999999@s.whatsapp.net<br>
 
 ------------------------------------------------------------
 USAGE
