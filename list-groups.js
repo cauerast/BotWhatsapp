@@ -17,17 +17,17 @@ async function start() {
             const { connection, lastDisconnect, qr } = update;
 
             if(qr) {
-                console.log("📌 Escaneie o QR Code:");
+                console.log("\n\n---------- Escaneie o QR Code: ----------\n\n");
                 qrcode.generate(qr, { small: true });
             }
 
             if(connection === "open") {
-                console.log("✅ Conectado!");
+                console.log("\n\n---------- Conectado! ----------\n\n");
                 resolve(); // conexão pronta, pode buscar grupos
             }
 
             if(connection === "close") {
-                console.log("❌ Conexão fechada:", lastDisconnect?.error);
+                console.log("\n\n---------- Conexão fechada: ----------\n\n", lastDisconnect?.error);
             }
         });
     });
