@@ -2,7 +2,7 @@ import makeWASocket, { useMultiFileAuthState } from "@whiskeysockets/baileys"
 import axios from "axios"
 import qrcode from "qrcode-terminal"
 
-const N8N_WEBHOOK = "https://n8n-n8n.e4wfok.easypanel.host/webhook-test/whatsapp"
+const N8N_WEBHOOK = "https://n8n-n8n.e4wfok.easypanel.host/webhook/whatsapp/"
 
 async function start() {
     const { state, saveCreds } = await useMultiFileAuthState("./auth")
@@ -20,21 +20,21 @@ async function start() {
         const { connection, qr, lastDisconnect } = update
 
         if (qr) {
-            console.log("\n📌 SCAN THIS QR CODE:\n")
+            console.log("\n\n----- SCAN THIS QR CODE: -----\n\n")
             qrcode.generate(qr, { small: true })
         }
 
         if (connection === "open") {
-            console.log("✅ Connected to WhatsApp!")
+            console.log("\n\n---------- Connected to WhatsApp! ----------\n\n")
         }
 
         // Auto-reconnect on disconnect
         if (connection === "close") {
             const shouldReconnect =
                 lastDisconnect?.error?.output?.statusCode !== 401
-            console.log("❌ Disconnected", lastDisconnect?.error)
+            console.log("\n\n---------- Reconecting... ----------\n\n", lastDisconnect?.error)
             if (shouldReconnect) {
-                console.log("🔄 Reconnecting...")
+                console.log("\n\n----------- Reconnecting... ------------\n\n")
                 start()
             }
         }
@@ -57,18 +57,18 @@ async function start() {
             msg.message?.imageMessage?.caption ||
             ""
 
-        console.log(`📩 Message from ${sender}: ${text}`)
+        console.log(`\n\n---------- Message from ${sender}: ${text} -------------\n\n`)
 
-        // Send to n8n
+        // sent to n8n
         try {
             await axios.post(N8N_WEBHOOK, {
                 sender,
                 text,
                 raw: msg
             })
-            console.log("➡️ Sent to n8n")
+            console.log("\n\n---------- Sent to n8n ----------\n\n")
         } catch (err) {
-            console.log("❌ Error sending to n8n:", err.message)
+            console.log("\n\n---------- Error sending to n8n ----------\n\n", err.message)
         }
     })
 }
