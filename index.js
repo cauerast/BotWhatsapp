@@ -5,7 +5,7 @@ import qrcode from "qrcode-terminal"
 const N8N_WEBHOOK = "https://n8n-n8n.e4wfok.easypanel.host/webhook/whatsapp/"
 
 async function start() {
-    const { state, saveCreds } = await useMultiFileAuthState("./auth")
+    const { state, saveCreds } = await useMultiFileAuthState("./auth");
 
     const sock = makeWASocket({
         auth: state,
@@ -31,7 +31,7 @@ async function start() {
         // Auto-reconnect on disconnect
         if (connection === "close") {
             const shouldReconnect =
-                lastDisconnect?.error?.output?.statusCode !== 401
+                lastDisconnect?.error?.output?.statusCode !== 401;
             console.log("\n\n---------- Reconecting... ----------\n\n", lastDisconnect?.error)
             if (shouldReconnect) {
                 console.log("\n\n----------- Reconnecting... ------------\n\n")
