@@ -34,9 +34,9 @@ async function start() {
 
     // Agora a sessão está pronta → busca todos os grupos
     const allGroups = await sock.groupFetchAllParticipating();
-    Object.values(allGroups).forEach(g => {
+    Object.values(allGroups).forEach(g => {  // g means group
         console.log("Group name:", g.subject);
-        console.log("Group ID:", g.id);
+        console.log("Group ID:", g.id); 
     });
 }
 
