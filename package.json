@@ -7,5 +7,21 @@
     "@whiskeysockets/baileys": "latest",
     "axios": "latest",
     "qrcode-terminal": "latest"
-  }
+  },
+  "description": "A Node.js project that connects to WhatsApp Web via Baileys, monitors messages from a specific user in a specific group, and forwards them to an n8n webhook. The project also includes routes for listing all groups and running the bot in different modes.",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cauerast/BotWhatsapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cauerast/BotWhatsapp/issues"
+  },
+  "homepage": "https://github.com/cauerast/BotWhatsapp#readme"
 }
