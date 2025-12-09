@@ -47,7 +47,7 @@ async function start() {
         const msg = m.messages[0]
 
         if (!msg.message) return
-        if (msg.key.fromMe) return
+        if (msg.key.fromMe) return 
 
         const sender = msg.key.remoteJid
 
