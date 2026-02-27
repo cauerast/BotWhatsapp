@@ -1,5 +1,7 @@
 run w/ node js
     npm install
+    npm install @whiskeysockets/baileys axios qrcode-terminal
+    npm update
+    npm fund
     npm init -y
     node index.js
-    
