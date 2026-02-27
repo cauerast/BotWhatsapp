@@ -1,6 +1,16 @@
 # WhatsApp Group Monitor & n8n Integration Bot
 
-A Node.js project that connects to WhatsApp Web via Baileys, monitors messages from a specific user in a specific group, and forwards them to an n8n webhook. The project also includes routes for listing all groups and running the bot in different modes.
+This Node.js project utilizes the **Baileys** library to monitor messages from a specific user within a group and forward them automatically to an automation workflow in **n8n**.
+
+This version is optimized for server environments (VPS) and Docker containers, fixing common connection failures and ensuring session persistence.
+
+## Features
+
+- **Auto-Version Patch:** Automatically detects the latest WhatsApp Web version to prevent the `405 Method Not Allowed` error.
+- **Browser Spoofing:** Updated browser headers to reduce the risk of IP banning in Data Centers.
+- **Robust Persistence:** Engineered for Docker volumes, eliminating the need for frequent QR Code rescanning.
+
+---
 
 ------------------------------------------------------------
 FEATURES
@@ -21,14 +31,14 @@ FILE STRUCTURE
 ------------------------------------------------------------
 
 .<br>
-├── .env<br>
-├── .gitignore<br>
-├── index.js<br>
-├── index-geral.js<br>
-├── list-groups.js<br>
-├── package.json<br>
-├── package-lock.json<br>
-└── requirements.txt<br>
+├── auth/               # Stores session keys (Generated automatically)<br>
+├── .env                # Configuration variables (NEVER commit to Git)<br>
+├── .gitignore          # Sensitive file protection<br>
+├── Dockerfile          # Instructions for Easypanel/Docker builds<br>
+├── index.js            # Main bot with filtering and webhook logic<br>
+├── list-groups.js      # Utility to discover Group IDs (JID)<br>
+├── package.json        # Project dependencies<br>
+└── README.md           # Documentation<br>
 
 ------------------------------------------------------------
 PREREQUISITES
@@ -45,9 +55,8 @@ INSTALLATION
 ------------------------------------------------------------
 
 1. Clone the repository:
-   git clone https://github.com/YOUR_USERNAME/whatsapp-n8n-bot.git<br><br>
-   - on terminal: <br>
-   cd whatsapp-n8n-bot<br>
+   git clone [https://github.com/cauerast/BotWhatsapp.git](https://github.com/cauerast/BotWhatsapp.git)<br><br>
+   cd BotWhatsapp<br>
 
 2. Install dependencies:<br>
    npm install
