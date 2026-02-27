@@ -39,7 +39,7 @@ async function start() {
         }
 
         if (connection === "close") {
-            // Pegamos o código de erro para saber se devemos reconectar
+    
             const statusCode = lastDisconnect?.error?.output?.statusCode;
             const shouldReconnect = statusCode !== DisconnectReason.loggedOut;
             
