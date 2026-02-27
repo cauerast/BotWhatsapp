@@ -99,7 +99,7 @@ EXAMPLE OUTPUT
 ------------------------------------------------------------
 
 ----------SCAN THE QR CODE BELOW----------
-<QR CODE>
+(qrcode)
 
 ----------Connected to WhatsApp!----------
 
