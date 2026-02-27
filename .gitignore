@@ -1,6 +1,9 @@
-.env
+# Dependências
 node_modules/
 auth/
+
+# .env
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -8,7 +11,14 @@ auth/
 .env.development
 .env.test
 .env.production
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# Outros
+.DS_Store
+dist/
