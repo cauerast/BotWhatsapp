@@ -1,8 +1,11 @@
 import makeWASocket, { useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion } from "@whiskeysockets/baileys";
 import axios from "axios";
 import qrcode from "qrcode-terminal";
+import dotenv from "dotenv";
 
-const N8N_WEBHOOK = "https://n8n-n8n.e4wfok.easypanel.host/webhook/whatsapp/";
+dotenv.config();
+
+const N8N_WEBHOOK = process.env.N8N_WEBHOOK;
 
 async function start() {
     const { version, isLatest } = await fetchLatestBaileysVersion();
