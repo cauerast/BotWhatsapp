@@ -1,14 +1,17 @@
-import makeWASocket, { useMultiFileAuthState, DisconnectReason } from "@whiskeysockets/baileys";
+import makeWASocket, { useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion } from "@whiskeysockets/baileys";
 import axios from "axios";
 import qrcode from "qrcode-terminal";
 
 const N8N_WEBHOOK = "https://n8n-n8n.e4wfok.easypanel.host/webhook/whatsapp/";
 
 async function start() {
-    // IMPORTANTE: Se o erro 405 persistir, delete a pasta './auth' manualmente antes de rodar
+    const { version, isLatest } = await fetchLatestBaileysVersion();
+    console.log(`Usando WA v${version.join('.')}, isLatest: ${isLatest}`);
+
     const { state, saveCreds } = await useMultiFileAuthState("./auth");
 
     const sock = makeWASocket({
+        version,
         auth: state,
         printQRInTerminal: false,
         // lembrar de atualizar o browser!
