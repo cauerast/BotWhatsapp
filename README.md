@@ -98,7 +98,7 @@ TARGET_NUMBER   → Specific WhatsApp number to filter messages<br>
 EXAMPLE OUTPUT
 ------------------------------------------------------------
 
-----------SCAN THE QR CODE BELOW----------
+----------SCAN THE QR CODE BELOW----------<br>
 (qrcode)
 
 ----------Connected to WhatsApp!----------
