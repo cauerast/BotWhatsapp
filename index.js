@@ -47,7 +47,7 @@ async function start() {
             console.log(`\n\n---------- Conexão fechada (Status: ${statusCode}) ----------\n\n`);
 
             if (shouldReconnect) {
-                console.log("Tentando reconectar...");
+                console.log("Reconectando...");
                 start();
             } else {
                 console.log("Você foi desconectado. Apague a pasta 'auth' e escaneie novamente.");
