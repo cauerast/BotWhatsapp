@@ -5,7 +5,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-
 const N8N_WEBHOOK = process.env.N8N_WEBHOOK;
 
 async function start() {
