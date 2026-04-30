@@ -48,7 +48,6 @@ PREREQUISITES
 - npm
 - WhatsApp account
 - n8n webhook URL
-- Internet connection
 
 ------------------------------------------------------------
 INSTALLATION
@@ -116,6 +115,6 @@ MIT License
 AUTHOR
 ------------------------------------------------------------
 
-Cauê Silva Rasteiro<br>
+Cauê R.<br>
 GitHub: https://github.com/cauerast<br>
 LinkedIn: https://www.linkedin.com/in/cauê-rast-26bba22a6/<br>
